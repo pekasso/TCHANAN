@@ -9,14 +9,12 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/administrateur')]
 class AdministrateurController extends AbstractController
 {
-    /**
-     * Liste tous les administrateurs
-     */
+    
     #[Route('/', name: 'app_administrateur_index', methods: ['GET'])]
     public function index(AdministrateurRepository $repository): Response
     {
@@ -28,6 +26,7 @@ class AdministrateurController extends AbstractController
     /**
      * Créer un nouvel administrateur
      */
+    /*
     #[Route('/new', name: 'app_administrateur_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -53,6 +52,7 @@ class AdministrateurController extends AbstractController
     /**
      * Modifier un administrateur
      */
+    /** 
     #[Route('/{id}/edit', name: 'app_administrateur_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Administrateur $administrateur, EntityManagerInterface $entityManager): Response
     {
@@ -69,12 +69,12 @@ class AdministrateurController extends AbstractController
         return $this->render('administrateur/edit.html.twig', [
             'administrateur' => $administrateur,
             'form' => $form,
-        ]);
+        ]);/*
     }
 
     /**
      * Supprimer un administrateur (avec vérification du jeton CSRF)
-     */
+     
     #[Route('/{id}', name: 'app_administrateur_delete', methods: ['POST'])]
     public function delete(Request $request, Administrateur $administrateur, EntityManagerInterface $entityManager): Response
     {
@@ -83,6 +83,9 @@ class AdministrateurController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_administrateur_index');
+        return $this->redirectToRoute('app_administrateur_index'
+        );*/
     }
-}
+    
+
+

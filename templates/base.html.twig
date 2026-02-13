@@ -4,42 +4,35 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        
         {% block stylesheets %}
-        	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-            <link rel="stylesheet" href="{{ asset("css?family=Open+Sans:300,400,700")}}">
-            <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
-            <link rel="stylesheet" href="{{asset("css/font-awesome.min.css") }}">
-            <link rel="stylesheet" href="{{asset("css/bootstrap-theme.css")}}" media="screen" >
-            <link rel="stylesheet" href="{{asset('css/main.css')}}">
+            <link rel="shortcut icon" href="{{ asset('assets/image/tchanan.png') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" media="screen">
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap("app") }}  <script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
-                <script src="{{ asset("http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js") }}"></script>
-                <script src="{{asset("js/headroom.min.js")}}"</script>
-                <script src="{{asset("js/jQuery.headroom.min.js")}}"></script>
-                <script src="{{asset("js/template.js")}}"></script>
-            {% endblock %}
+            {{ importmap('app') }}
+            {# Retrait du asset() pour les liens CDN externes et correction des balises #}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+            <script src="{{ asset('js/headroom.min.js') }}"></script>
+            <script src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
+            <script src="{{ asset('js/template.js') }}"></script>
         {% endblock %}
-
     </head>
-                
+               
     <body>
-            {% block navigation %}
-                
-        {% endblock %}
+        {% block navigation %}{% endblock %}
         
-        {% block body %}
-                
-        {% endblock %}
+        {% block body %}{% endblock %}
+
+        <footer>
+            {% block footer %}
+                {% include 'tools/footer.html.twig' %}
+            {% endblock %}
+        </footer>
     </body>
-
-<footer>
-        {% block footer %}
-        {% include 'tools/footer.html.twig' %}
-
-        {% endblock %}
-
-</footer>
-
 </html>
