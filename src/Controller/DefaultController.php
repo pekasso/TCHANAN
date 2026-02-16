@@ -20,13 +20,6 @@ final class DefaultController extends AbstractController
         ]);
     }
 
-    #[Route('/a-propos', name: 'app_apropos')]
-    public function apropos(): Response
-    {
-        return $this->render('default/apropos.html.twig', [
-            'controller_apropos' => 'DefaultController',
-        ]);
-    }
 
     #[Route('/agriculteur', name: 'app_agriculteur')]
     public function agriculteur(): Response
