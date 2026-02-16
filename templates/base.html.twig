@@ -17,8 +17,8 @@
 
     {% block javascripts %}
         {{ importmap('app') }}
-        <script src="jquery.min.js"></script>
-        <script src="bootstrap.min.js"></script>
+        <script src="{{asset('js/query.min.js')}}"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
         <script src="{{ asset('js/headroom.min.js') }}"></script>
         <script src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
         <script src="{{ asset('js/template.js') }}"></script>
