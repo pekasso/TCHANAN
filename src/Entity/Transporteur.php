@@ -77,12 +77,12 @@ class Transporteur
         return $this;
     }
 
-    public function getTelephony(): ?string
+    public function getTelephone(): ?string
     {
         return $this->telephony;
     }
 
-    public function setTelephony(string $telephony): static
+    public function setTelephone(string $telephony): static
     {
         $this->telephony = $telephony;
 
