@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class AdministrateurTest extends TestCase
 {
-    protected function testValid(): void
+    public function testValid(): void
     {
         $administrateur = new Administrateur();
 
@@ -25,11 +25,11 @@ class AdministrateurTest extends TestCase
         $this->assertSame('connan@gmail.com', $administrateur->getEmail());
             $this->assertSame('mdp123', $administrateur->getMdp());
     }
-    protected function testInvalid (): void
+    public function testInvalid (): void
     {
         $administrateur= new Administrateur ();
 
-                $administrateur->setNom('Connan');
+        $administrateur->setNom('Connan');
         $administrateur->setPrenom('Gregory'); 
         $administrateur->setAdresse('Paris 5eme');
         $administrateur->setTelephone('06 21 12 23 01');
@@ -45,7 +45,7 @@ class AdministrateurTest extends TestCase
         $this->assertFalse($administrateur->getMdp() === '-mdp123-');
 
     }
-    protected function testEmpty (): void
+    public function testEmpty (): void
     {
           $administrateur= new Administrateur();
 
