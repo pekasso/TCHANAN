@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Tests;
+
 use App\Entity\Secretaire;
 use PHPUnit\Framework\TestCase;
 
