@@ -21,7 +21,7 @@ class TransporteurController extends AbstractController
     public function index(TransporteurRepository $repository): Response
     {
         return $this->render('transporteur/index.html.twig', [
-            'transporteurs' => $repository->findAll(),
+            'controller_name' => 'TransporteurController' 
         ]);
     }
 }

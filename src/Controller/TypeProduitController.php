@@ -21,7 +21,7 @@ class TypeProduitController extends AbstractController
     public function index(TypeProduitRepository $repository): Response
     {
         return $this->render('typeproduit/index.html.twig', [
-            'typeproduits' => $repository->findAll(),
+            'controller_name' => 'TypeProduitController' 
         ]);
     }
 }
