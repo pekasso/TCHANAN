@@ -11,13 +11,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/transporteur')]
+#[Route('/transporteur' , name: 'transporteur_' , methods: ['GET'])]
 class TransporteurController extends AbstractController
 {
     /**
      * Liste tous les transporteurs
      **/
-    #[Route('/', name: 'app_transporteur_index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(TransporteurRepository $repository): Response
     {
         return $this->render('transporteur/index.html.twig', [

@@ -11,18 +11,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/agriculteur')]
+#[Route('/agriculteur' , name: 'agriculteur_' , methods: ['GET'])]
 class AgriculteurController extends AbstractController
 {
     /**
      * Liste tous les agriculteurs
      */
-    #[Route('/', name: 'app_agriculteur_index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(AgriculteurRepository $repository): Response
     {
         return $this->render('agriculteur/index.html.twig', [
-            'agriculteurs' => $repository->findAll(),
+            'controller_name' => 'AgriculteurController'
         ]);
-    }
+        }
 
 }

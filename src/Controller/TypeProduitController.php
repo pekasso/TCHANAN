@@ -11,13 +11,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/typeproduit')]
+#[Route('/typeproduit' , name: 'typeproduit_' , methods: ['GET'])]
 class TypeProduitController extends AbstractController
 {
     /**
      * Liste tous les produits
      **/
-    #[Route('/', name: 'app_typeproduit', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(TypeProduitRepository $repository): Response
     {
         return $this->render('typeproduit/index.html.twig', [
