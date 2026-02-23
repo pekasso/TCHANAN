@@ -11,7 +11,6 @@ final class DefaultController extends AbstractController
 {
     #[Route('/', name: 'app_index')]
     #[Route('/default', name: 'app_default')]
-    #[Route('/home', name: 'app_home')]
     #[Route('/accueil', name: 'app_accueil')]
     public function index(): Response
     {
@@ -59,10 +58,12 @@ public function typeProduit(): Response
 {
      return $this->render('default/type_produit.html.twig', [ 'controller_type_produit' => 'DefaultController', ]);
 }
+/*
  #[Route('/produit', name: 'app_produit', methods: ['GET'])]public function produit(): Response
   {
      return $this->render('default/produit.html.twig', ['controller_produit' => 'DefaultController', ]);
    }
+     */
    #[Route('/categorie', name: 'app_categorie', methods: ['GET'])]
     public function categorie(): Response
     {

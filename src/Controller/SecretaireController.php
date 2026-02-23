@@ -11,17 +11,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/secretaire')]
+#[Route('/secretaire' , name: 'secretaire_' , methods: ['GET'] )]
 class SecretaireController extends AbstractController
 {
     /**
      * Liste tous les secretaire
      **/
-    #[Route('/', name: 'app_secretaire_index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(SecretaireRepository $repository): Response
     {
         return $this->render('secretaire/index.html.twig', [
-            'secretaires' => $repository->findAll(),
+            'controller_name' => 'SecretaireController' 
         ]);
     }
 }

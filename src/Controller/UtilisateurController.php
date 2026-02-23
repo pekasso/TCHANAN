@@ -11,17 +11,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/utilisateur')]
+#[Route('/utilisateur' , name: 'utilisateur_' , methods: ['GET'])]
 class UtilisateurController extends AbstractController
 {
     /**
      * Liste tous les utilisateurs
      */
-    #[Route('/', name: 'app_utilisateur_index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET'])]
     public function index(UtilisateurRepository $repository): Response
     {
         return $this->render('utilisateur/index.html.twig', [
-            'utilisateurs' => $repository->findAll(),
+            'controller_name' => 'UtilisateurController'
         ]);
     }
 
